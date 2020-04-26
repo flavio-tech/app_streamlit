@@ -53,7 +53,8 @@ def cria_correlationplot(df, colunas_numericas):
 
 def main():
     # tela principal com logo e motivação
-    st.image('https://hackernoon.com/drafts/f2px36fy.png', width = 450)
+    #st.image('https://hackernoon.com/drafts/f2px36fy.png', width = 450)
+    st.image('hello_small.gif')
     st.header(' ')
       
     # Menu lateral
@@ -66,14 +67,17 @@ def main():
     st.sidebar.markdown(' ')
     st.sidebar.markdown("**Selecione a demo ou outro arquivo para analisado**")
 
-    st.sidebar.title('Sugestões para (gmail):')
-    st.sidebar.markdown('* flaviosilva250')
-
     #selecione entre Demo ou seu arquivo para análise
     choice = st.sidebar.radio(
         '', 
         ('demo', 'vou importar um arquivo')
     )  
+    for i in range(5):
+        st.sidebar.markdown(' ')
+    st.sidebar.title('Sugestões para (gmail):')
+    st.sidebar.markdown('* flaviosilva250')
+    
+    
     if choice == 'demo':
         st.subheader('cortesia de')
         st.image('AngelList.png')
@@ -130,7 +134,8 @@ def main():
         st.markdown(' ')
         st.header('Estatística descritiva univariada')
         st.subheader('Nota: Algumas opções funcionam apenas para dados numéricos do dataframe')
-        st.image('https://imagens-voitto.s3.amazonaws.com/imagens-blog/meta/963b9ed4a8402803a51366d488f444b5.jpg', width = 400)
+        #st.image('https://imagens-voitto.s3.amazonaws.com/imagens-blog/meta/963b9ed4a8402803a51366d488f444b5.jpg', width = 400)
+        st.image('stat_small.jpg')
         aux = pd.DataFrame({"colunas": df.columns, 'tipos': df.dtypes})
         colunas_numericas = list(aux[aux['tipos'] != 'object']['colunas'])
         colunas_object = list(aux[aux['tipos'] == 'object']['colunas'])
@@ -166,7 +171,8 @@ def main():
                 st.table(df[colunas_numericas].describe().transpose())
         st.header('Visualização dos dados')
         st.header(' ')
-        st.image('http://www.empowerbi.com.br/images/service-2.jpg', width=400)
+        #st.image('http://www.empowerbi.com.br/images/service-2.jpg', width=400)
+        st.image('vis_small.jpg')
         st.markdown('Selecione a visualizacao')
         view = st.radio(
         'Selecione a visualizacao',      
